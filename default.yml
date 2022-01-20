@@ -1,0 +1,49 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+global_vars:
+  - name: longdate
+    type: date
+    params:
+      format: "%B %d, %Y"
+
+toggle_key: OFF
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+  - trigger: ":longdate"
+    replace: "{{longdate}}"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  # Daily Habits
+  - trigger: ":dailyhabits"
+    replace: "{{longdate}} Daily Habits"
+    vars:
+      - name: mylongdate
+        type: date
+        params:
+          format: "%B %d, %Y"
+
+  # Work email
+  - trigger: ":email"
+    replace: "daniel.miller@approveshield.com"
