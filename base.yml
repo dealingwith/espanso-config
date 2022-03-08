@@ -1,0 +1,76 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+global_vars:
+  - name: longdate
+    type: date
+    params:
+      format: "%B %d, %Y"
+
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+  - trigger: ":longdate"
+    replace: "{{longdate}}"
+  - trigger: ":now"
+    replace: "{{time}}"
+    vars:
+      - name: time
+        type: date
+        params:
+          format: "%I:%M %p"
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  # Daily Habits
+  - trigger: ":dailyhabits"
+    replace: "{{longdate}} Daily Habits"
+    vars:
+      - name: mylongdate
+        type: date
+        params:
+          format: "%B %d, %Y"
+
+  # Work email
+  - trigger: ":email"
+    replace: "daniel.miller@approveshield.com"
+
+  # Jira link from issue ID
+  - trigger: ":jira"
+    replace: "https://approveshield.atlassian.net/browse/{{clipboard}}"
+    vars:
+        - name: "clipboard"
+          type: "clipboard"
+
+  # find my user in rails console
+  - trigger: ":user"
+    replace: "u = User.find_by(email: 'daniel.miller@approveshield.com')"
+
+  # personal email
+  - trigger: ":dw"
+    replace: "dealingwith@gmail.com"
+
+  - trigger: ":shrug"
+    replace: "¯\\_(ツ)_/¯"
