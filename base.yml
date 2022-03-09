@@ -74,3 +74,6 @@ matches:
 
   - trigger: ":shrug"
     replace: "¯\\_(ツ)_/¯"
+
+  - trigger: ":555"
+    replace: "555-555-5555"
