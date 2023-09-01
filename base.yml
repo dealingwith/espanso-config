@@ -25,11 +25,6 @@ matches:
         type: date
         params:
           format: "%I:%M %p"
-
-  # Work email
-  - trigger: ":email"
-    replace: "daniel.miller@approveshield.com"
-
   # personal gmail
   - trigger: ":dw"
     replace: "dealingwith@gmail.com"
