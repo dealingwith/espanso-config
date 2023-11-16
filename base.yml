@@ -46,3 +46,6 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  - trigger: ":tm"
+    replace: "™"
