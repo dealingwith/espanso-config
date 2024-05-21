@@ -49,3 +49,6 @@ matches:
 
   - trigger: ":tm"
     replace: "™"
+
+  - trigger: ":omnivore"
+    replace: "dealingwith-fNcPLER6e@inbox.omnivore.app"
